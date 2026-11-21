@@ -1,0 +1,219 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - EduLearn</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #faf8ff;
+            color: #38215b;
+        }
+
+        .navbar {
+            background: white;
+            padding: 18px 7%;
+            box-shadow: 0 3px 15px rgba(0,0,0,.04);
+        }
+
+        .navbar-brand {
+            font-size: 25px;
+            font-weight: 800;
+            color: #7138c8;
+            text-decoration: none;
+        }
+
+        .welcome {
+            margin: 35px 7% 25px;
+            padding: 40px;
+            border-radius: 20px;
+            background: linear-gradient(120deg,#7138c8,#a477eb);
+            color: white;
+        }
+
+        .welcome h1 {
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .welcome p {
+            color: #eee4ff;
+            margin: 0;
+        }
+
+        .dashboard-content {
+            padding: 25px 7% 70px;
+        }
+
+        .section-title {
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .section-description {
+            color: #81758f;
+            margin-bottom: 30px;
+        }
+
+        .feature-card {
+            height: 100%;
+            padding: 30px 25px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 5px 25px rgba(90,48,145,.07);
+            transition: .3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 30px rgba(90,48,145,.13);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: #f0e7ff;
+            color: #7138c8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h5 {
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #81758f;
+            line-height: 1.7;
+            min-height: 75px;
+        }
+
+        .btn-open {
+            display: inline-block;
+            background: #7138c8;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 9px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .btn-open:hover {
+            background: #5424a0;
+            color: white;
+        }
+
+        footer {
+            background: #321b50;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'dashboard' %}">
+            <i class="bi bi-mortarboard-fill"></i> EduLearn
+        </a>
+
+        <a href="{% url 'home' %}" class="text-decoration-none text-secondary">
+            <i class="bi bi-box-arrow-left"></i> Kembali ke Home
+        </a>
+    </div>
+</nav>
+
+<section class="welcome">
+    <h1>
+        Belajar Lebih Mudah,
+        Raih Masa Depan Cerah!
+    </h1>
+    <p>
+        Yuk, mulai perjalanan belajarmu.
+        Pilih fitur pembelajaran yang ingin kamu gunakan.
+    </p>
+</section>
+
+<section class="dashboard-content">
+
+    <h2 class="section-title">Fitur Pembelajaran</h2>
+    <p class="section-description">
+        Semua kebutuhan belajar tersedia dalam satu platform.
+    </p>
+
+    <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="bi bi-book-half"></i>
+                </div>
+                <h5>Materi Pembelajaran</h5>
+                <p>
+                    Pelajari materi berdasarkan bagian dan submateri,
+                    lengkap dengan penjelasan serta gambar pendukung.
+                </p>
+                <a href="{% url 'materi' %}" class="btn-open">
+                    Buka Materi <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="bi bi-play-circle"></i>
+                </div>
+                <h5>Video Pembelajaran</h5>
+                <p>
+                    Tonton video pembelajaran untuk membantu
+                    memahami materi dengan lebih mudah.
+                </p>
+                <a href="{% url 'video' %}" class="btn-open">
+                    Lihat Video <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="bi bi-patch-question"></i>
+                </div>
+                <h5>Kuis dan Evaluasi</h5>
+                <p>
+                    Kerjakan latihan soal untuk menguji
+                    pemahamanmu setelah mempelajari materi.
+                </p>
+                <a href="{% url 'kuis' %}" class="btn-open">
+                    Mulai Kuis <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 EduLearn. Platform Pembelajaran Mandiri.
+</footer>
+
+</body>
+</html>
